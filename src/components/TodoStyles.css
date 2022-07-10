@@ -1,0 +1,50 @@
+.todoContainer {
+    padding: 1rem;
+}
+
+/* Input */
+
+.todoInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.inputInner {
+    padding: 0.5rem;
+    min-width: 300px;
+}
+
+.inputIcon {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+/* Task */
+
+.todoItem {
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+}
+
+.todoItemRight {
+    display: flex;
+}
+
+.todoItemRight input {
+    margin-right: 0.5rem;
+}
+
+/* Delete */
+.deleteIcon {
+    cursor: pointer;
+}
+
+/* Toggle tasks */
+
+.completed {
+    text-decoration: line-through;
+}
