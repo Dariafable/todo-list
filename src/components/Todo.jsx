@@ -31,7 +31,6 @@ const Todo = () => {
         setAllTodos([...allTodos, newTask]);
         setInput('');
     }
-    
 
     const handleInput = ({ target }) => {
         const valueInput = target.value; 
@@ -45,7 +44,7 @@ const Todo = () => {
     };
 
     // toggle completed tasks
-   const completedTask = (index) => {
+    const completedTask = (index) => {
         const updatedTodos = [...allTodos];
         updatedTodos[index].completed = !updatedTodos[index].completed;
         setAllTodos(updatedTodos)
@@ -64,7 +63,7 @@ const Todo = () => {
                     type='text'
                 />
                 <AiOutlinePlus className="inputIcon" onClick={addNewTask} /> {/* AiOutlinePlus icon */}
-            </div> {/* todoInput */}
+            </div> {/* todoInput render */}
         </form>        
            
 
@@ -80,7 +79,7 @@ const Todo = () => {
                     </div> 
                 )
             })}
-        </div> { /*  allTodos  */}
+        </div> { /*  allTodos render  */}
 
      </div> /* todoContainer */
   )
