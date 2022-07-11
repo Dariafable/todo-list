@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react"
 import { AiOutlinePlus, AiOutlineClose } from 'react-icons/ai'
+import { FcReading } from "react-icons/fc";
 import axios from 'axios'
 import './TodoStyles.css'
 
@@ -52,6 +53,8 @@ const Todo = () => {
 
     return (
      <div className="todoContainer">
+
+        <h1 className="mainTitle"><FcReading />Powerlist</h1>
         
         <form onSubmit={addNewTask}>
             <div className="todoInput">
