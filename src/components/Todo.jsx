@@ -51,10 +51,15 @@ const Todo = () => {
         setAllTodos(updatedTodos)
     } 
 
+    //date
+    const currentDate = new Date().toLocaleDateString();
+
     return (
      <div className="todoContainer">
 
         <h1 className="mainTitle"><FcReading />Powerlist</h1>
+
+        <div className="currentDate">{currentDate}</div>
         
         <form onSubmit={addNewTask}>
             <div className="todoInput">
