@@ -55,42 +55,44 @@ const Todo = () => {
     const currentDate = new Date().toLocaleDateString();
 
     return (
-     <div className="todoContainer">
-
-        <h1 className="mainTitle"><FcReading />Powerlist</h1>
-
-        <div className="currentDate">{currentDate}</div>
-        
-        <form onSubmit={addNewTask}>
-            <div className="todoInput">
-                <input 
-                    className="inputInner"
-                    value={input}
-                    onChange={handleInput} 
-                    placeholder='Enter the text'
-                    type='text'
-                />
-                <AiOutlinePlus className="inputIcon" onClick={addNewTask} /> {/* AiOutlinePlus icon */}
-            </div> {/* todoInput render */}
-        </form>        
+        <div className="todoContainer">
+   
+           <h1 className="mainTitle"><FcReading />Powerlist</h1>
+   
+           <p className="currentDate">{currentDate}</p>
            
+           <form onSubmit={addNewTask}>
+               <div className="todoInput">
+                   <input 
+                       className="inputInner"
+                       value={input}
+                       onChange={handleInput} 
+                       placeholder='Enter the text'
+                       type='text'
+                   />
+                   <AiOutlinePlus className="inputIcon" onClick={addNewTask} /> {/* AiOutlinePlus icon */}
+               </div> {/* todoInput render */}
+           </form>        
+              
+   
+           <div>
+               {allTodos.map((todo, index) => {
+                   return (
+                       <div className='todoItem' key={todo.id}>
+                           <div className="todoItemRight">
+                               <input onChange={() => completedTask(index)} type="checkbox" />
+                               <div className={todo.completed ? 'completed' : ''}>{index + 1}. {todo.title}</div>
+                           </div> 
+                           <AiOutlineClose className="deleteIcon" onClick={() => deleteTask(todo.id)}/>   
+                       </div> 
+                   )
+               })}
+           </div> { /*  allTodos render  */}
 
-        <div>
-            {allTodos.map((todo, index) => {
-                return (
-                    <div className='todoItem' key={todo.id}>
-                        <div className="todoItemRight">
-                            <input onChange={() => completedTask(index)} type="checkbox" />
-                            <div className={todo.completed ? 'completed' : ''}>{index + 1}. {todo.title}</div>
-                        </div> 
-                        <AiOutlineClose className="deleteIcon" onClick={() => deleteTask(todo.id)}/>   
-                    </div> 
-                )
-            })}
-        </div> { /*  allTodos render  */}
-
-     </div> /* todoContainer */
-  )
-}
+           <p className='lengthTask'>{(allTodos < 1) ? 'You have no tasks' : `Tasks: ${allTodos.length}`}</p>
+   
+        </div> /* todoContainer */
+     )
+   }
 
 export default Todo

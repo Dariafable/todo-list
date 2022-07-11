@@ -62,3 +62,9 @@
 .completed {
     text-decoration: line-through;
 }
+
+/* Number of tasks */
+
+.lengthTask {
+    font-weight: 700;
+}
