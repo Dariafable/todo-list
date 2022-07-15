@@ -9,9 +9,19 @@
     margin-bottom: 1rem;
 }
 
+.dateBox {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
 .currentDate {
-    margin-bottom: 0.5rem;
-    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: .5rem;
+
+    border: 1px solid #4b00ff;
+    border-radius: 5px; 
 }
 
 /* Input */
@@ -25,11 +35,16 @@
 .inputInner {
     padding: 0.5rem;
     min-width: 300px;
+
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
 }
 
 .inputIcon {
-    color: #4b00ff;
     padding: 0.5rem;
+
+    color: #4b00ff;
     cursor: pointer;
 }
 
@@ -63,8 +78,31 @@
     text-decoration: line-through;
 }
 
-/* Number of tasks */
+/* Bottom */
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+}
 
 .lengthTask {
-    font-weight: 700;
+    padding: .5rem;
+
+    border: 1px solid #4b00ff;
+    border-radius: 5px;
 }
+
+.cleanAll {
+    padding: .5rem;
+
+    border: 1px solid #4b00ff;
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: background-color .2s linear;
+}
+
+.cleanAll:hover {
+    background-color: #dcd3f3;
+}
+

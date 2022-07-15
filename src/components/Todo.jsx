@@ -5,7 +5,7 @@ import axios from 'axios'
 import './TodoStyles.css'
 
 const Todo = () => {
-    const API = 'https://jsonplaceholder.typicode.com/todos/?_start=0&_limit=5'; 
+    const API = 'https://jsonplaceholder.typicode.com/todos/?_start=0&_limit=3'; 
 
     const [allTodos, setAllTodos] = useState([]); 
     const [input, setInput] = useState('');
@@ -54,12 +54,17 @@ const Todo = () => {
     //date
     const currentDate = new Date().toLocaleDateString();
 
+    // clean all tasks
+    const cleanAllTasks = (e) => {
+        setAllTodos([]);
+    }
+
     return (
         <div className="todoContainer">
    
-           <h1 className="mainTitle"><FcReading />Powerlist</h1>
+           <h1 className="mainTitle"><FcReading />powerlist</h1>
    
-           <p className="currentDate">{currentDate}</p>
+           <div className="dateBox"><span className="currentDate">{currentDate}</span></div>
            
            <form onSubmit={addNewTask}>
                <div className="todoInput">
@@ -67,7 +72,7 @@ const Todo = () => {
                        className="inputInner"
                        value={input}
                        onChange={handleInput} 
-                       placeholder='Enter the text'
+                       placeholder='enter the text'
                        type='text'
                    />
                    <AiOutlinePlus className="inputIcon" onClick={addNewTask} /> {/* AiOutlinePlus icon */}
@@ -89,7 +94,17 @@ const Todo = () => {
                })}
            </div> { /*  allTodos render  */}
 
-           <p className='lengthTask'>{(allTodos < 1) ? 'You have no tasks' : `Tasks: ${allTodos.length}`}</p>
+           <div className="bottom">
+              <span className='lengthTask'>
+                {(allTodos < 1) ? 'you have no tasks' : `tasks: ${allTodos.length}`}</span>
+
+              <span 
+                  className="cleanAll"
+                  onClick={cleanAllTasks}>
+                    clean all</span>
+           </div>
+
+           
    
         </div> /* todoContainer */
      )
